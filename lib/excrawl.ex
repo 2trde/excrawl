@@ -104,7 +104,7 @@ defmodule Excrawl do
       @my_ctx hd(@ctx_stack)
       def group(@my_ctx, unquote(opts[:name]), input) do
         input = Floki.find(input, unquote(opts[:css]))
-				|> Enum.map(fn(input) ->
+        |> Enum.map(fn(input) ->
           @members
           |> Enum.reduce(%{}, fn({name, fun}, map) ->
             Map.put(map, name, fun.(@ctx, name, input))

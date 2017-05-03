@@ -12,13 +12,13 @@ defmodule GroupTest do
         <span id="productTitle">Tralala</span>
         <span id="priceblock_ourprice">123</span>
       </div>
-			<div class="product">
-				<span id="name">Foo</span>
-			</div>
-			<div class="product">
-				<span id="name">Bar</span>
-			</div>
-			<input type="text" name="foo" value="123456789">
+      <div class="product">
+        <span id="name">Foo</span>
+      </div>
+      <div class="product">
+        <span id="name">Bar</span>
+      </div>
+      <input type="text" name="foo" value="123456789">
     </html>
   """
 
@@ -39,10 +39,10 @@ defmodule GroupTest do
     end
   end
 
-	test "case3" do
+  test "case3" do
     assert case3(@sample_doc)
-			== %{products: [%{name: "Foo"}, %{name: "Bar"}]}
-	end
+      == %{products: [%{name: "Foo"}, %{name: "Bar"}]}
+  end
 
   parser :parse_group_in_group do
     group name: :html, css: "html" do
@@ -53,7 +53,7 @@ defmodule GroupTest do
     end
   end
 
-	test "group in group" do
+  test "group in group" do
     assert parse_group_in_group(@sample_doc) == %{html: %{main: %{title: "Tralala", price: "123"}}}
-	end
+  end
 end

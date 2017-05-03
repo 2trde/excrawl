@@ -12,13 +12,13 @@ defmodule TextTest do
         <span id="productTitle">Tralala</span>
         <span id="priceblock_ourprice">123</span>
       </div>
-			<div class="product">
-				<span id="name">Foo</span>
-			</div>
-			<div class="product">
-				<span id="name">Bar</span>
-			</div>
-			<input type="text" name="foo" value="123456789">
+      <div class="product">
+        <span id="name">Foo</span>
+      </div>
+      <div class="product">
+        <span id="name">Bar</span>
+      </div>
+      <input type="text" name="foo" value="123456789">
     </html>
   """
 
