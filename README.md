@@ -130,8 +130,10 @@ The parse would look like
 And gives the output
 
 ```
-  [
-    %{name: "Drill", price: 100},
-    %{name: "Hammer", price: 20}
-  ]
+  %{
+    products: [
+      %{name: "Drill", price: 100},
+      %{name: "Hammer", price: 20}
+    ]
+  }
 ```
