@@ -36,7 +36,7 @@ defmodule Excrawl do
       def text(@ctx, unquote(opts[:name]), input) do
         result = Floki.find(input, unquote(opts[:css]))
         unquote(check)
-        Floki.text(result)
+        Floki.text(result) |> String.trim
       end
     end
   end
@@ -54,7 +54,13 @@ defmodule Excrawl do
     quote do
       @members [{unquote(opts[:name]), &__MODULE__.attr/3} | @members]
       def attr(@ctx, unquote(opts[:name]), input) do
-        result = Floki.find(input, unquote(opts[:css]))
+        result = if unquote(opts[:css]) do
+                   Floki.find(input, unquote(opts[:css]))
+                 else
+                   input
+                 end
+
+        result = result
                  |> Floki.attribute(unquote(opts[:attribute]))
         unquote(check)
         Floki.text(result)
