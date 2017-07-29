@@ -31,6 +31,12 @@ defmodule Excrawl do
         nil
     end
 
+    post = if opts[:post] do
+      quote do
+        text = unquote(opts[:post]).(text)
+      end
+    end
+
     quote do
       @members [{unquote(opts[:name]), &__MODULE__.text/3} | @members]
       def text(@ctx, unquote(opts[:name]), input) do
@@ -40,7 +46,9 @@ defmodule Excrawl do
                    input
                  end
         unquote(check)
-        Floki.text(result) |> String.trim
+        text = Floki.text(result) |> String.trim
+        unquote(post)
+        text
       end
     end
   end
