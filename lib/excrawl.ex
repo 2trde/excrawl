@@ -69,14 +69,20 @@ defmodule Excrawl do
         nil
     end
 
+    find_css = if opts[:css] do
+      quote do
+        Floki.find(input, unquote(opts[:css]))
+      end
+    else
+      quote do
+        input
+      end
+    end
+
     quote do
       @members [{unquote(opts[:name]), &__MODULE__.attr/3} | @members]
       def attr(@ctx, unquote(opts[:name]), input) do
-        result = if unquote(opts[:css]) do
-                   Floki.find(input, unquote(opts[:css]))
-                 else
-                   input
-                 end
+        result = unquote(find_css)
 
         result = result
                  |> Floki.attribute(unquote(opts[:attribute]))
