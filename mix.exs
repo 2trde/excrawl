@@ -28,7 +28,7 @@ defmodule Excrawl.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:floki, "~> 0.8"},
+      {:floki, "~> 0.24"},
       {:httpotion, "~> 3.0.0"}
     ]
   end

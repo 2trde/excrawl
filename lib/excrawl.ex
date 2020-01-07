@@ -8,8 +8,9 @@ defmodule Excrawl do
       @members []
       @members_stack []
       unquote(handler[:do])
-      def unquote(name)(input) do
+      def unquote(name)(html) do
         try do
+          {:ok, input} = Floki.parse_document(html)
           @members
           |> Enum.reduce(%{}, fn({name, fun}, map) ->
             Map.put(map, name, fun.(@ctx, name, input))
