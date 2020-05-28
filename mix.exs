@@ -29,7 +29,6 @@ defmodule Excrawl.Mixfile do
   defp deps do
     [
       {:floki, "~> 0.24"},
-      {:httpotion, "~> 3.0.0"}
     ]
   end
 end
