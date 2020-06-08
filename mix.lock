@@ -1,6 +1,6 @@
 %{
-  "floki": {:hex, :floki, "0.24.0", "81ec04f66cdc7d142fa8c9f402e4493a25bf9eb8bc39f971f58a8ea84a2e35d3", [:mix], [{:html_entities, "~> 0.5.0", [hex: :html_entities, repo: "hexpm", optional: false]}], "hexpm"},
-  "html_entities": {:hex, :html_entities, "0.5.0", "40f5c5b9cbe23073b48a4e69c67b6c11974f623a76165e2b92d098c0e88ccb1d", [:mix], [], "hexpm"},
+  "floki": {:hex, :floki, "0.24.0", "81ec04f66cdc7d142fa8c9f402e4493a25bf9eb8bc39f971f58a8ea84a2e35d3", [:mix], [{:html_entities, "~> 0.5.0", [hex: :html_entities, repo: "hexpm", optional: false]}], "hexpm", "e8a5af967e4a1804bb034ea6e713338adf7bcb082608baae8783f2a41bf754ad"},
+  "html_entities": {:hex, :html_entities, "0.5.0", "40f5c5b9cbe23073b48a4e69c67b6c11974f623a76165e2b92d098c0e88ccb1d", [:mix], [], "hexpm", "8e9186e1873bea1067895f6a542b59df6c9fcf3b516ba272eeff3ea0c7b755cd"},
   "httpotion": {:hex, :httpotion, "3.0.0", "4ce0af28f4254bdd0457d0fe065a83787751e0a5b5f5d27030948253be38df5c", [:mix], [{:ibrowse, "~> 4.2", [hex: :ibrowse, optional: false]}]},
   "ibrowse": {:hex, :ibrowse, "4.2.2", "b32b5bafcc77b7277eff030ed32e1acc3f610c64e9f6aea19822abcadf681b4b", [:rebar3], []},
   "mochiweb_html": {:hex, :mochiweb_html, "2.15.0", "d7402e967d7f9f2912f8befa813c37be62d5eeeddbbcb6fe986c44e01460d497", [:rebar3], []},
